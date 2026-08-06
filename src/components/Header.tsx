@@ -22,7 +22,7 @@ export function Header() {
     >
       <div className="container-page flex h-16 items-center justify-between gap-6 md:h-20">
         <a href="#top" className="label transition-opacity hover:opacity-60">
-          M. Eduarda Peres
+          {clinic.name}
         </a>
 
         <nav className="hidden items-center gap-9 lg:flex">
