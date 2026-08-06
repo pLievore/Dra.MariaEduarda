@@ -1,0 +1,2 @@
+- `dra-maria-eduarda.png` — retrato profissional da Dra., usado na seção "Sobre". ✅ presente.
+- `og.jpg` — 1200×630, card de compartilhamento (Open Graph). ⬜ pendente.

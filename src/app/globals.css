@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/*
+ * Direção editorial: papel creme em toda a página, uma única seção escura como
+ * pontuação (o agendamento), tipografia serifada em tamanho grande fazendo o
+ * papel que normalmente caberia a ícones e cards.
+ */
+@theme {
+  /* Papel — fundo de quase tudo */
+  --color-paper: #f2eee6;
+  --color-paper-dim: #e9e3d7;
+  --color-paper-warm: #ebe4d6;
+
+  /* Tinta — texto e a seção escura */
+  --color-ink: #14130f;
+  --color-ink-soft: #56524a;
+  --color-ink-faint: #8b8578;
+
+  /* Verde-mata profundo — único acento, usado com parcimônia */
+  --color-accent: #2c4a3e;
+  --color-accent-bright: #3d6555;
+
+  --color-line: #d5cec0;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-instrument), ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-wrap: pretty;
+  }
+
+  /*
+   * Instrument Serif só tem um peso. O tamanho e o tracking negativo é que
+   * criam a hierarquia — nunca aplique font-weight nos títulos.
+   */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 84rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* Rótulo de masthead: caixa alta, miúdo, muito espaçado. */
+  .label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  /* Fio de 1px que separa as faixas — a "régua" do layout editorial. */
+  .rule {
+    border-top: 1px solid var(--color-line);
+  }
+
+  /*
+   * Escala editorial contida. clamp() em vez de breakpoints, para escalar de
+   * forma contínua — mas com teto baixo: o serifado dá o tom sem precisar de
+   * tamanho gritante. `display-xl` é exclusivo do h1.
+   */
+  .display-xl {
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  }
+
+  .display-lg {
+    font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+  }
+
+  .display-md {
+    font-size: clamp(1.25rem, 1.8vw, 1.625rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
