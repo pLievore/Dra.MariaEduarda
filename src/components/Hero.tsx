@@ -38,11 +38,13 @@ export function Hero() {
               transition={{ duration: 0.7, ease }}
               className="display-xl mt-6"
             >
-              Odontologia
-              <br />
-              que começa
-              <br />
-              <span className="text-accent italic">pela prevenção.</span>
+              {/*
+                Sem <br /> fixo: a quebra dura ignora `text-wrap: balance` e
+                produz linhas desiguais no celular. O único corte garantido é
+                antes do acento, e ele vem do `block` — não de um caractere.
+              */}
+              Odontologia que começa{" "}
+              <span className="text-accent block italic">pela prevenção.</span>
             </motion.h1>
 
             <motion.div
@@ -54,7 +56,7 @@ export function Hero() {
                 {clinic.shortDescription}
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
                 <a
                   href="#agendar"
                   className="group inline-flex items-center gap-3 bg-ink px-8 py-4 text-sm font-medium text-paper transition-colors hover:bg-accent"
@@ -121,7 +123,7 @@ function Masthead() {
         {clinic.trustPoints.map((point) => (
           <div
             key={point.label}
-            className="border-b border-line py-6 pr-6 lg:border-r lg:border-b-0 lg:pl-6 lg:first:pl-0 lg:last:border-r-0"
+            className="border-b border-line py-5 pr-4 md:py-6 lg:border-r lg:border-b-0 lg:pr-6 lg:pl-6 lg:first:pl-0 lg:last:border-r-0"
           >
             <p className="font-display text-xl md:text-2xl">{point.value}</p>
             <p className="mt-1.5 text-xs text-ink-faint">{point.label}</p>

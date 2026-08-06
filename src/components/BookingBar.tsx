@@ -35,6 +35,8 @@ export function BookingBar() {
 
   return (
     <div
+      // A área segura evita que a barra fique sob o indicador de home do iPhone.
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       className={`fixed inset-x-0 bottom-0 z-40 border-t border-ink/10 bg-paper/95 backdrop-blur-sm transition-transform duration-500 ${
         visible ? "translate-y-0" : "translate-y-full"
       }`}

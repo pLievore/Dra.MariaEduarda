@@ -76,9 +76,8 @@ export function BookingForm() {
         <Reveal className="lg:col-span-5">
           <p className="label text-paper/50">Agendamento</p>
           <h2 className="display-lg mt-6">
-            Preencha e a gente
-            <br />
-            <span className="text-paper/55 italic">te responde.</span>
+            Preencha e a gente{" "}
+            <span className="block text-paper/55 italic">te responde.</span>
           </h2>
           <p className="mt-8 max-w-sm leading-relaxed text-paper/75">
             Ao enviar, o WhatsApp do consultório abre com a sua mensagem já

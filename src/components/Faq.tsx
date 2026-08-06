@@ -8,9 +8,7 @@ export function Faq() {
       <div className="container-page grid gap-12 lg:grid-cols-12 lg:gap-16">
         <Reveal className="lg:col-span-4">
           <h2 className="display-lg lg:sticky lg:top-32">
-            Antes de
-            <br />
-            <span className="text-accent italic">agendar.</span>
+            Antes de <span className="text-accent block italic">agendar.</span>
           </h2>
         </Reveal>
 
@@ -30,7 +28,7 @@ export function Faq() {
                     +
                   </span>
                 </summary>
-                <p className="mt-4 max-w-2xl pl-11 text-base leading-relaxed text-ink-soft">
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft md:pl-11">
                   {faq.answer}
                 </p>
               </details>

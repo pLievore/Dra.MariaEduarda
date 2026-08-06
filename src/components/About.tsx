@@ -49,7 +49,7 @@ export function About() {
             <Reveal>
               <p className="label text-ink-faint">Quem vai te atender</p>
               {/* TODO: revisar com a Dra. — texto construído a partir de formação e áreas de atuação. */}
-              <p className="mt-6 text-lg leading-relaxed text-balance">
+              <p className="mt-6 text-lg leading-relaxed">
                 Com {clinic.education.toLowerCase()}, a Dra. Maria Eduarda atende
                 na Cidade Monções com foco em{" "}
                 {clinic.focusAreas.join(", ").toLowerCase()}.

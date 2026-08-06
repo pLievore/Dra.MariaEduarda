@@ -12,9 +12,8 @@ export function Location() {
         <Reveal>
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <h2 className="display-lg max-w-lg">
-              Entre o Brooklin
-              <br />
-              <span className="text-accent italic">e a Berrini.</span>
+              Entre o Brooklin{" "}
+              <span className="text-accent block italic">e a Berrini.</span>
             </h2>
             <a
               href={clinic.mapsUrl}
@@ -63,7 +62,7 @@ export function Location() {
             <p className="label text-ink-faint">Horários</p>
             <div className="mt-4 space-y-1">
               {clinic.hours.map((slot) => (
-                <p key={slot.label} className="flex justify-between gap-4 md:max-w-56">
+                <p key={slot.label} className="flex max-w-xs justify-between gap-4 md:max-w-56">
                   <span>{slot.label}</span>
                   <span className="text-ink-faint">
                     {"closed" in slot && slot.closed

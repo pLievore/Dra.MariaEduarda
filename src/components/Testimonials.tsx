@@ -11,9 +11,8 @@ export function Testimonials() {
         <Reveal>
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <h2 className="display-lg max-w-lg">
-              Quem já sentou
-              <br />
-              <span className="text-accent italic">na cadeira.</span>
+              Quem já sentou{" "}
+              <span className="text-accent block italic">na cadeira.</span>
             </h2>
             <a
               href={clinic.mapsUrl}
@@ -34,7 +33,7 @@ export function Testimonials() {
                   <p className="font-display text-xl">{testimonial.name}</p>
                   <p className="mt-1 text-xs text-ink-faint">{testimonial.service}</p>
                 </figcaption>
-                <blockquote className="leading-relaxed text-balance text-ink-soft md:col-span-8">
+                <blockquote className="leading-relaxed text-ink-soft md:col-span-8">
                   “{testimonial.text}”
                 </blockquote>
               </figure>

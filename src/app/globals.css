@@ -29,7 +29,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 4rem;
+    /* Altura do header no desktop (h-20) — o mobile é menor e sobra folga. */
+    scroll-padding-top: 5.5rem;
   }
 
   body {
@@ -44,13 +45,18 @@
    * Instrument Serif só tem um peso. O tamanho e o tracking negativo é que
    * criam a hierarquia — nunca aplique font-weight nos títulos.
    */
+  /*
+   * `line-height: 1.1` em vez de 1.05: o português tem cedilha e til descendo
+   * do baseline ("começa", "prevenção") e, empilhado em 3 linhas no celular,
+   * o valor apertado fazia os acentos quase encostarem na linha de baixo.
+   */
   h1,
   h2,
   h3 {
     font-family: var(--font-display);
     font-weight: 400;
     letter-spacing: -0.02em;
-    line-height: 1.05;
+    line-height: 1.1;
     text-wrap: balance;
   }
 
@@ -98,7 +104,7 @@
    * tamanho gritante. `display-xl` é exclusivo do h1.
    */
   .display-xl {
-    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    font-size: clamp(2.25rem, 5.5vw, 4.5rem);
   }
 
   .display-lg {

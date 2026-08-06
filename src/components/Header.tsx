@@ -21,7 +21,11 @@ export function Header() {
       }`}
     >
       <div className="container-page flex h-16 items-center justify-between gap-6 md:h-20">
-        <a href="#top" className="label transition-opacity hover:opacity-60">
+        {/* Tracking menor no celular: 0.22em em 24 caracteres esbarra no "Menu". */}
+        <a
+          href="#top"
+          className="label tracking-[0.12em] transition-opacity hover:opacity-60 sm:tracking-[0.22em]"
+        >
           {clinic.name}
         </a>
 
